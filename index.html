@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My Love ❤️</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Segoe UI,sans-serif;
+background:linear-gradient(135deg,#180018,#65052f,#ff477e);color:white;min-height:100vh;overflow-x:hidden}
+.screen{display:none;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:25px}
+.screen.active{display:flex}.card{width:min(950px,94vw);padding:40px 25px;border-radius:30px;
+background:rgba(255,255,255,.12);backdrop-filter:blur(15px);box-shadow:0 20px 70px #0007;
+border:1px solid #ffffff33} h1{font-size:clamp(2.4rem,8vw,5.5rem);margin:10px 0}
+h2{font-size:clamp(2rem,6vw,4rem);margin:10px 0 20px} p{font-size:1.15rem;line-height:1.7}
+.heart{font-size:70px;animation:pulse 1.3s infinite}@keyframes pulse{50%{transform:scale(1.18)}}
+button{padding:16px 35px;border:0;border-radius:50px;font-size:1.1rem;font-weight:bold;margin:12px;cursor:pointer;transition:.25s}
+.yes{background:white;color:#e52f69}.no{background:#ffffff22;color:white;border:1px solid white}
+button:hover{transform:scale(1.07)} .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:15px;margin:25px 0}.photo{height:230px;border-radius:20px;overflow:hidden;background:#ffffff18;border:1px solid #ffffff22}
+.photo img{width:100%;height:100%;object-fit:cover;transition:.35s}.photo:hover img{transform:scale(1.08)}
+.wife{font-size:1.4rem;color:#ffe2ec}.small{opacity:.75;font-size:.9rem}
+</style></head>
+<body>
+
+<section class="screen active" id="question"><div class="card">
+<div class="heart">❤️</div><h2>Meheka...</h2>
+<p><b>Would you love Gourab forever?</b> 🥹❤️</p><p>One heart. One choice. One forever. ♾️</p>
+<button class="yes" onclick="yes()">YES ❤️</button><button class="no" onclick="no()">NO 🙈</button>
+</div></section>
+
+<section class="screen" id="yesPage"><div class="card">
+<div class="heart">💖</div><h1>Happy Birthday! 🎂</h1><h2>My Love ❤️</h2>
+<p class="wife"><b>Happy Birthday, my love, my wife. 💍❤️</b></p>
+<p>You are one of the most beautiful parts of my life. Thank you for every smile,
+every memory, every little moment, and for choosing to stay with Gourab. 🥹💕</p>
+<button class="yes" onclick="memories()">See Our Memories 📸</button>
+</div></section>
+
+<section class="screen" id="memories"><div class="card">
+<h2>Our 10 Beautiful Memories ❤️📸</h2><p>Ten pictures, countless memories, one special person. 💕</p>
+<div class="gallery">
+<div class="photo"><img src="images/photo1.jpg" alt="Memory 1"></div>
+<div class="photo"><img src="images/photo2.jpg" alt="Memory 2"></div>
+<div class="photo"><img src="images/photo3.jpg" alt="Memory 3"></div>
+<div class="photo"><img src="images/photo4.jpg" alt="Memory 4"></div>
+<div class="photo"><img src="images/photo5.jpg" alt="Memory 5"></div>
+<div class="photo"><img src="images/photo6.jpg" alt="Memory 6"></div>
+<div class="photo"><img src="images/photo7.jpg" alt="Memory 7"></div>
+<div class="photo"><img src="images/photo8.jpg" alt="Memory 8"></div>
+<div class="photo"><img src="images/photo9.jpg" alt="Memory 9"></div>
+<div class="photo"><img src="images/photo10.jpg" alt="Memory 10"></div>
+</div><p class="wife">Forever starts with us. ❤️♾️</p></div></section>
+
+<section class="screen" id="noPage"><div class="card">
+<div class="heart">🥺</div><h2>Gourab khub baje chele! 😭😂</h2>
+<p><b>But still... Gourab loves you very much. ❤️</b></p><p>Are you really sure about that answer? 🙈</p>
+<button class="yes" onclick="back()">Okay, let me think again ❤️</button>
+</div></section>
+
+<script>
+function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function yes(){show('yesPage');hearts()} function no(){show('noPage')} function back(){show('question')}
+function memories(){show('memories');hearts()}
+function hearts(){for(let i=0;i<18;i++){const x=document.createElement('span');x.innerHTML=['❤️','💖','💕','✨'][Math.floor(Math.random()*4)];
+x.style.position='fixed';x.style.left=Math.random()*100+'vw';x.style.bottom='-30px';x.style.fontSize=20+Math.random()*25+'px';x.style.zIndex=10;
+x.style.transition='transform 3s ease,opacity 3s';document.body.appendChild(x);
+requestAnimationFrame(()=>{x.style.transform='translateY(-110vh) rotate(360deg)';x.style.opacity=0});
+setTimeout(()=>x.remove(),3200)}}
+</script></body></html>
